@@ -7,8 +7,7 @@ def get_data(city,days):
                             f"?q={city}&appid={API_KEY}")
     response_j = response.json()
     days_data = response_j['list'][:days*8]
-    temp_list = [day_data['main']['temp']/10 for day_data in days_data]
-    print(response_j)
+    return days_data
 
 
 if __name__ == "__main__":
